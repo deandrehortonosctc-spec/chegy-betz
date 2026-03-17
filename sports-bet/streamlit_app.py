@@ -196,285 +196,6 @@ input:focus, select:focus {
 </style>
 """, unsafe_allow_html=True)
 
-/* Game Card - Professional */
-.game-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.game-card:hover {
-    border-color: #6366f1;
-    box-shadow: 0 8px 24px rgba(99,102,241,0.12);
-    transform: translateY(-2px);
-}
-
-.team-section {
-    text-align: center;
-    padding: 16px;
-}
-
-.team-image {
-    width: 100%;
-    max-width: 100px;
-    height: 100px;
-    object-fit: contain;
-    margin-bottom: 12px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-    transition: all 0.3s ease;
-}
-
-.team-image:hover {
-    transform: scale(1.05);
-}
-
-.team-name {
-    font-size: 1em;
-    color: #1a1a1a;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.odds-display {
-    background: #f3f4f6;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 14px;
-    margin-top: 12px;
-}
-
-.odds-value {
-    font-size: 1.8em;
-    color: #6366f1;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-.odds-label {
-    font-size: 0.8em;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-
-/* Bookmaker Grid */
-.bookmaker-card {
-    background: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 16px;
-    text-align: center;
-    transition: all 0.2s ease;
-}
-
-.bookmaker-card:hover {
-    background: #f3f4f6;
-    border-color: #6366f1;
-}
-
-.bookmaker-name {
-    font-size: 0.85em;
-    color: #666;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    font-weight: 600;
-}
-
-.bookmaker-odds {
-    font-size: 1.4em;
-    color: #6366f1;
-    font-weight: 700;
-}
-
-/* Metrics */
-.metric-card {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-left: 4px solid #6366f1;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.metric-value {
-    font-size: 1.8em;
-    color: #6366f1;
-    font-weight: 700;
-}
-
-.metric-label {
-    font-size: 0.8em;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    margin-top: 8px;
-    font-weight: 600;
-}
-
-/* Status Badges */
-.badge-success {
-    background: #f0fdf4;
-    border: 1px solid #86efac;
-    color: #166534;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 0.9em;
-    font-weight: 600;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.badge-empty {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    color: #991b1b;
-    padding: 10px 18px;
-    border-radius: 8px;
-    font-size: 0.9em;
-    font-weight: 600;
-    display: inline-block;
-}
-
-/* Divider */
-.divider {
-    height: 1px;
-    background: #e5e7eb;
-    margin: 30px 0;
-}
-
-/* Geometric background elements */
-.geo-element {
-    position: fixed;
-    pointer-events: none;
-    opacity: 0.03;
-    z-index: -1;
-}
-
-.geo-circle-1 {
-    top: 5%;
-    right: 5%;
-}
-
-/* Form Elements */
-input[type="password"],
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-    border: 1px solid #e5e7eb !important;
-    border-radius: 8px !important;
-    padding: 10px 12px !important;
-    font-size: 0.95em !important;
-    font-family: 'Inter', sans-serif !important;
-    background: white !important;
-    color: #1a1a1a !important;
-}
-
-input[type="password"]:focus,
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus,
-textarea:focus {
-    border-color: #6366f1 !important;
-    box-shadow: 0 0 0 3px rgba(99,102,241,0.1) !important;
-}
-
-/* Buttons */
-.stButton > button {
-    background: #6366f1;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
-    font-weight: 600;
-    font-size: 0.95em;
-    transition: all 0.3s ease;
-}
-
-.stButton > button:hover {
-    background: #4f46e5;
-    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
-}
-
-/* Sidebar */
-.sidebar .sidebar-content {
-    background: #f8f9fa;
-}
-
-.sidebar .stSubheader {
-    color: #1a1a1a;
-    font-weight: 700;
-}
-
-/* Tabs */
-.stTabs [data-baseweb="tab-list"] {
-    gap: 1px;
-}
-
-.stTabs [data-baseweb="tab"] {
-    padding: 12px 20px;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    color: #666;
-}
-
-.stTabs [aria-selected="true"] {
-    color: #6366f1;
-    border-bottom-color: #6366f1;
-}
-
-/* Select Boxes */
-.stMultiSelect [data-baseweb="tag"] {
-    background: #6366f1 !important;
-    color: white !important;
-    border-radius: 6px !important;
-}
-
-/* Spinner */
-.stSpinner {
-    color: #6366f1 !important;
-}
-
-/* Success/Error Messages */
-.stSuccess {
-    background: #f0fdf4 !important;
-    color: #166534 !important;
-    border: 1px solid #86efac !important;
-    border-radius: 8px !important;
-}
-
-.stError {
-    background: #fef2f2 !important;
-    color: #991b1b !important;
-    border: 1px solid #fecaca !important;
-    border-radius: 8px !important;
-}
-
-.stWarning {
-    background: #fffbeb !important;
-    color: #92400e !important;
-    border: 1px solid #fde047 !important;
-    border-radius: 8px !important;
-}
-
-.stInfo {
-    background: #f0f9ff !important;
-    color: #0c4a6e !important;
-    border: 1px solid #bfdbfe !important;
-    border-radius: 8px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
 # ============================================================================
 # USERS DATABASE (Local JSON)
 # ============================================================================
@@ -711,263 +432,137 @@ def generate_bet_summary(teams: List[str], arb_value: float, profit: float, prof
 # ============================================================================
 
 def page_auth():
-    """Login and signup page for unauthenticated users"""
-    st.markdown("""
-    <div class="hero-section">
-        <div class="hero-title">💰 Chegy Bets</div>
-        <div class="hero-subtitle">Professional Arbitrage Detection Across All Major Sports</div>
-    </div>
-    """, unsafe_allow_html=True)
+    """Super simple login/signup page"""
+    
+    st.markdown('<div class="hero-big"><h1>⚽ CHEGY BETS</h1><p>Find FREE Money in Sports Betting!</p></div>', unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([1, 2, 1])
-    
     with col2:
-        st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+        st.markdown('<div class="info-box" style="text-align: center; font-size: 1.2em; margin-top: 20px;">👉 Pick one option below 👈</div>', unsafe_allow_html=True)
         
-        tab1, tab2 = st.tabs(["🔐 Login", "📝 Sign Up"])
+        tab1, tab2 = st.tabs(["🔓 LOGIN", "📝 NEW USER"])
         
         with tab1:
-            st.markdown("### Log In to Your Account")
-            login_username = st.text_input("Username", key="login_user")
-            login_password = st.text_input("Password", type="password", key="login_pass")
+            st.markdown('<div class="label-big">🔑 Your Username:</div>', unsafe_allow_html=True)
+            username = st.text_input("", key="login_user", placeholder="Type your name here")
             
-            if st.button("🔓 Login", use_container_width=True):
-                if login_username and login_password:
-                    if login(login_username, login_password):
+            st.markdown('<div class="label-big">🔐 Your Password:</div>', unsafe_allow_html=True)
+            password = st.text_input("", type="password", key="login_pass", placeholder="Type your password")
+            
+            if st.button("✅ LOGIN", use_container_width=True):
+                if username and password:
+                    if login(username, password):
                         st.session_state.logged_in = True
-                        st.session_state.username = login_username
-                        st.session_state.user_tier = get_user_tier(login_username)
-                        st.success("✅ Login successful!")
+                        st.session_state.username = username
+                        st.session_state.user_tier = get_user_tier(username)
+                        st.success("🎉 Welcome back!")
                         st.rerun()
                     else:
-                        st.error("❌ Invalid username or password")
+                        st.error("❌ Wrong name or password")
                 else:
-                    st.warning("⚠️ Please enter username and password")
+                    st.warning("⚠️ Please fill in both boxes")
             
-            st.markdown("---")
-            st.markdown("""
-            **Demo Account:**
-            - Username: `admin`
-            - Password: `chegy2024`
-            """)
+            st.markdown('---')
+            st.markdown('<div class="info-box"><b>👤 Try Demo:</b><br>Username: <code>admin</code><br>Password: <code>chegy2024</code></div>', unsafe_allow_html=True)
         
         with tab2:
-            st.markdown("### Create New Account")
-            signup_username = st.text_input("Choose Username", key="signup_user")
-            signup_password = st.text_input("Choose Password", type="password", key="signup_pass")
-            signup_tier = st.selectbox("Account Tier", ["free", "premium"], key="signup_tier")
+            st.markdown('<div class="label-big">📝 Pick a Username:</div>', unsafe_allow_html=True)
+            new_user = st.text_input("", key="signup_user", placeholder="Your name (3+ letters)")
             
-            if st.button("✍️ Create Account", use_container_width=True):
-                if signup_username and signup_password:
-                    if len(signup_username) < 3:
-                        st.error("❌ Username must be at least 3 characters")
-                    elif signup_username == ADMIN_USERNAME:
-                        st.error("❌ That username is reserved")
+            st.markdown('<div class="label-big">🔐 Pick a Password:</div>', unsafe_allow_html=True)
+            new_pass = st.text_input("", type="password", key="signup_pass", placeholder="Your secret password")
+            
+            if st.button("✅ CREATE ACCOUNT", use_container_width=True):
+                if new_user and new_pass:
+                    if len(new_user) < 3:
+                        st.error("❌ Name must be 3+ letters")
+                    elif new_user == ADMIN_USERNAME:
+                        st.error("❌ That name is taken")
+                    elif new_user in load_users():
+                        st.error("❌ Someone already has that name")
                     else:
-                        users = load_users()
-                        if signup_username in users:
-                            st.error("❌ Username already taken")
-                        else:
-                            register_user(signup_username, signup_password, signup_tier)
-                            st.success("✅ Account created! Please log in.")
-                            st.session_state.logged_in = False
+                        register_user(new_user, new_pass, "free")
+                        st.success("🎉 Account created! Now log in above")
                 else:
-                    st.warning("⚠️ Please enter username and password")
+                    st.warning("⚠️ Fill in both boxes")
 
 
 def page_dashboard():
-    """Main dashboard - only shown to authenticated users"""
+    """Super simple dashboard showing bet opportunities"""
     
-    # Sidebar
+    # Header
+    st.markdown('<div class="hero-big"><h1>🏆 Find FREE Money!</h1><p>Pick a Sport → See the Bets → Make Money</p></div>', unsafe_allow_html=True)
+    
+    # Sidebar controls
     with st.sidebar:
-        st.markdown(f"### 👤 {st.session_state.username.upper()}")
-        st.markdown(f"**Tier:** {'👑 ADMIN' if st.session_state.user_tier == 'admin' else f'⭐ {st.session_state.user_tier.upper()}'}")
+        st.markdown('<div class="label-big">👤 ' + st.session_state.username.upper() + '</div>', unsafe_allow_html=True)
         st.markdown("---")
-        if st.button("🚪 Logout", use_container_width=True):
+        
+        st.markdown('<div class="label-big">🏟️ Pick Your Sport:</div>', unsafe_allow_html=True)
+        sports = ["NBA Basketball", "NFL Football", "MLB Baseball", "Soccer", "Hockey"]
+        selected_sport = st.selectbox("", sports, key="sport_select")
+        
+        st.markdown('<div class="label-big">📊 Pick Markets:</div>', unsafe_allow_html=True)
+        col_sel, col_desel = st.columns(2)
+        with col_sel:
+            if st.button("✅ ALL", use_container_width=True, key="sel_all"):
+                st.session_state.selected_markets = ["spread", "moneyline", "total"]
+        with col_desel:
+            if st.button("❌ NONE", use_container_width=True, key="desel_all"):
+                st.session_state.selected_markets = []
+        
+        markets = st.multiselect("",
+            ["Spread", "Moneyline", "Total"],
+            default=st.session_state.get("selected_markets", ["Spread"]),
+            key="markets_select"
+        )
+        st.session_state.selected_markets = markets
+        
+        # Admin API Key
+        if st.session_state.user_tier == "admin":
+            st.markdown("---")
+            st.markdown('<div class="label-big">🔑 Admin API Key:</div>', unsafe_allow_html=True)
+            api_key = st.text_input("", type="password", key="api_key_input", placeholder="Paste key here")
+            if api_key:
+                st.session_state.api_key = api_key
+                st.success("✅ Key Set!")
+        
+        st.markdown("---")
+        if st.button("🚪 LOGOUT", use_container_width=True):
             st.session_state.logged_in = False
             st.session_state.username = None
             st.session_state.user_tier = None
             st.rerun()
     
-    # Hero Section
-    st.markdown("""
-    <div class="hero-section">
-        <div class="hero-title">💰 Chegy Bets</div>
-        <div class="hero-subtitle">Professional Arbitrage Detection Across All Major Sports</div>
-    </div>
-    """, unsafe_allow_html=True)
+    # Main content
+    st.markdown(f'<div class="info-box"><b>🎯 Showing:</b> {", ".join(markets) if markets else "None selected"}</div>', unsafe_allow_html=True)
     
-    # Sidebar Settings
-    with st.sidebar:
-        st.markdown("---")
-        st.subheader("⚙️ Settings")
-        
-        # API Key - Admin Only
+    if not st.session_state.get("api_key"):
         if st.session_state.user_tier == "admin":
-            api_key = st.text_input("API Key", value=os.environ.get('ODDS_API_KEY', ''), type='password')
+            st.warning("⚠️ Set your API Key in settings →")
         else:
-            api_key = os.environ.get('ODDS_API_KEY', '')
-            st.info("📌 Contact admin for API key access")
-        
-        if api_key:
-            sports_map = get_available_sports(api_key)
-            sport_name = st.selectbox("🏆 Sport", list(sports_map.keys()))
-            sport = sports_map[sport_name]
-        else:
-            sport = "basketball_nba"
-            if st.session_state.user_tier == "admin":
-                st.warning("Add API key to unlock all sports")
-        
-        region = st.selectbox("🌍 Region", ["us", "eu", "uk"], index=0)
-        
-        st.markdown("**📊 Markets**")
-        col_sel_all, col_desel_all = st.columns(2)
-        with col_sel_all:
-            select_all = st.button("✅ Select All", use_container_width=True, key="select_all_btn")
-        with col_desel_all:
-            deselect_all = st.button("❌ Deselect All", use_container_width=True, key="deselect_all_btn")
-        
-        if select_all:
-            st.session_state.selected_markets = ["h2h", "spreads", "totals"]
-        if deselect_all:
-            st.session_state.selected_markets = []
-        
-        markets = st.multiselect(
-            "Select Markets",
-            ["h2h", "spreads", "totals"],
-            default=st.session_state.get("selected_markets", ["h2h"]),
-            key="markets_select"
-        )
-        st.session_state.selected_markets = markets
-        
-        if not markets:
-            markets = ["h2h"]
-        markets_str = ",".join(markets)
-        
-        stake = st.number_input("💵 Stake Amount", value=100.0, min_value=1.0, step=10.0)
-        arb_threshold = st.number_input("🎯 Max Arb (%)", value=0.99, step=0.001, format="%.3f")
-        
-        if st.button("🔍 SEARCH ARBITRAGE", use_container_width=True):
-            st.session_state.search = True
-
-    # Check if search requested
-    search = st.session_state.get("search", False)
-
-    if not api_key:
-        st.warning("🔑 Please provide The Odds API key in settings")
-    elif search:
-        with st.spinner("🔄 Scanning all sportsbooks..."):
-            data = get_odds(api_key, sport, region, markets_str)
-        
-        if not data:
-            st.markdown('<div class="badge-empty">❌ No games available</div>', unsafe_allow_html=True)
-        else:
-            save_detailed_odds(data)
-            arbs = find_arbitrage(data)
-            
-            # Filter & build display
-            opportunities = []
-            for arb in arbs:
-                if arb["arb_value"] > arb_threshold:
-                    continue
-                
-                teams = arb["teams"]
-                best = arb["odds"]
-                team_names = list(best.keys())
-                odds_vals = [best[team_names[0]], best[team_names[1]]]
-                stake_a, stake_b, profit, profit_pct = compute_stakes(odds_vals[0], odds_vals[1], total=stake)
-                
-                # Collect all bookmaker odds
-                all_bookmaker_odds = {}
-                for game in data:
-                    if game.get("teams") == teams:
-                        for bm in game.get("bookmakers", []):
-                            for market in bm.get("markets", []):
-                                for outcome in market.get("outcomes", []):
-                                    team = outcome.get("name")
-                                    odds = outcome.get("price")
-                                    if team == team_names[0]:
-                                        all_bookmaker_odds[bm.get("title")] = odds
-                
-                opportunities.append({
-                    "teams": teams,
-                    "best_odds": best,
-                    "all_odds": all_bookmaker_odds,
-                    "arb_value": arb["arb_value"],
-                    "profit": profit,
-                    "profit_pct": profit_pct,
-                    "stake_a": stake_a,
-                    "stake_b": stake_b,
-                })
-            
-            if not opportunities:
-                st.markdown('<div class="badge-empty">❌ No arbitrage found. Try adjusting filters.</div>', unsafe_allow_html=True)
-            else:
-                # Show summary
-                st.markdown(f'<div class="badge-success">✅ {len(opportunities)} ARBITRAGE OPPORTUNITIES FOUND</div>', unsafe_allow_html=True)
-                
-                # Metrics
-                col1, col2, col3, col4 = st.columns(4)
-                with col1:
-                    st.markdown(f"""
-                    <div class="metric-card">
-                        <div class="metric-value">{len(opportunities)}</div>
-                        <div class="metric-label">Total Arbs</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                with col2:
-                    avg_profit = sum(o["profit"] for o in opportunities) / len(opportunities)
-                    st.markdown(f"""
-                    <div class="metric-card">
-                        <div class="metric-value">${avg_profit:.2f}</div>
-                        <div class="metric-label">Avg Profit</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                with col3:
-                    max_profit = max(o["profit"] for o in opportunities)
-                    st.markdown(f"""
-                    <div class="metric-card">
-                        <div class="metric-value">${max_profit:.2f}</div>
-                        <div class="metric-label">Max Profit</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                with col4:
-                    avg_roi = sum(o["profit_pct"] for o in opportunities) / len(opportunities)
-                    st.markdown(f"""
-                    <div class="metric-card">
-                        <div class="metric-value">{avg_roi:.1f}%</div>
-                        <div class="metric-label">Avg ROI</div>
-                    </div>
-                    """, unsafe_allow_html=True)
-                
-                # Display opportunities
-                st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-                st.subheader("🎯 Available Opportunities")
-                
-                for opp in opportunities:
-                    display_professional_game_card(
-                        opp["teams"],
-                        opp["best_odds"],
-                        opp["all_odds"],
-                        opp["arb_value"],
-                        opp["profit"],
-                        opp["profit_pct"]
-                    )
-                
-                # Download option
-                st.markdown("<div class='divider'></div>", unsafe_allow_html=True)
-                df_export = pd.DataFrame([
-                    {
-                        "Game": " vs ".join(o["teams"]),
-                        "Profit": f"${o['profit']:.2f}",
-                        "ROI": f"{o['profit_pct']:.1f}%",
-                        "Arb Value": f"{o['arb_value']:.4f}"
-                    }
-                    for o in opportunities
-                ])
-                
-                csv = df_export.to_csv(index=False)
-                st.download_button("📥 Export Results (CSV)", csv, "arbitrage_opportunities.csv", "text/csv", use_container_width=True)
+            st.info("✋ Admin must set API Key first")
+    else:
+        if st.button("🔍 FIND BETS", use_container_width=True):
+            with st.spinner("🔄 Looking for FREE money..."):
+                try:
+                    api_key = st.session_state.api_key
+                    data = get_odds(api_key, selected_sport)
+                    
+                    if not data:
+                        st.info("🏟️ No games today")
+                    else:
+                        arbs = find_arbitrage(data)
+                        
+                        if arbs:
+                            st.markdown(f'<div class="info-box" style="text-align:center; font-size: 1.5em;">🎉 Found {len(arbs)} Bets!</div>', unsafe_allow_html=True)
+                            
+                            for idx, arb in enumerate(arbs[:10]):
+                                display_professional_game_card(arb["teams"], arb["odds"], {}, arb.get("arb_value", 0), arb.get("profit", 0), arb.get("profit_pct", 0))
+                        else:
+                            st.info("😴 No bets right now")
+                except Exception as e:
+                    st.error(f"❌ Error: {str(e)}")
 
 
 # ============================================================================
@@ -986,4 +581,3 @@ if not st.session_state.logged_in:
     page_auth()
 else:
     page_dashboard()
-
