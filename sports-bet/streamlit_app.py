@@ -11,66 +11,190 @@ import random
 from app import get_odds, find_arbitrage, compute_stakes
 from data_store import save_snapshot, save_detailed_odds
 
-st.set_page_config(page_title="Chegy Bets - Smart Arbitrage Betting", layout="wide")
+st.set_page_config(page_title="Chegy Bets - Easy Betting", layout="wide")
 
 # ============================================================================
-# PROFESSIONAL THEME & STYLING
+# SIMPLE KID-FRIENDLY THEME & STYLING
 # ============================================================================
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
 
 * {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Fredoka', sans-serif;
 }
 
 html, body {
-    background: #f8f9fa;
+    background: #f0f4ff;
     color: #1a1a1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 700;
     color: #1a1a1a;
-    letter-spacing: -0.3px;
 }
 
 .main {
-    background: #f8f9fa;
+    background: #f0f4ff;
 }
 
 .block-container {
-    max-width: 1400px;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    max-width: 900px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
-/* Hero Section - Clean Professional */
-.hero-section {
+/* Big Hero Title */
+.hero-big {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+}
+
+.hero-big h1 {
+    font-size: 3.5em;
+    color: white;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-big p {
+    font-size: 1.3em;
+    color: white;
+    margin: 10px 0 0 0;
+    opacity: 0.95;
+}
+
+/* Big Simple Buttons */
+.stButton > button {
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 40px;
+    font-weight: 700;
+    font-size: 1.2em;
+    height: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+}
+
+.stButton > button:hover {
+    background: #4f46e5;
+    box-shadow: 0 8px 20px rgba(99,102,241,0.4);
+    transform: scale(1.05);
+}
+
+/* Game Card - VERY SIMPLE */
+.game-card-simple {
     background: white;
-    border-radius: 16px;
-    padding: 48px;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border-top: 4px solid #6366f1;
+    border: 3px solid #6366f1;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.hero-title {
-    font-size: 2.8em;
+.teams-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.team-big {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 12px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
 }
 
-.hero-subtitle {
-    font-size: 1.05em;
-    color: #666;
-    font-weight: 400;
-    letter-spacing: 0px;
+.vs-text {
+    font-size: 1.5em;
+    color: #6366f1;
+    font-weight: 700;
 }
+
+.odds-big {
+    background: #fff3cd;
+    border: 3px solid #ffc107;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    color: #d39e00;
+    margin: 15px 0;
+}
+
+.profit-box {
+    background: #d1f3d1;
+    border: 3px solid #10b981;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #10b981;
+}
+
+/* Information boxes */
+.info-box {
+    background: #e0e7ff;
+    border-left: 5px solid #6366f1;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.step-number {
+    background: #6366f1;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Tabs - Simplified */
+.stTabs [data-baseweb="tab"] {
+    padding: 15px 25px;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* Form inputs */
+input, select {
+    font-size: 1.1em !important;
+    padding: 12px !important;
+    border-radius: 10px !important;
+    border: 2px solid #e5e7eb !important;
+}
+
+input:focus, select:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 4px rgba(99,102,241,0.2) !important;
+}
+
+.label-big {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+</style>
+""", unsafe_allow_html=True)
 
 /* Game Card - Professional */
 .game-card {
@@ -411,10 +535,18 @@ def get_user_tier(username: str) -> str:
 
 def american_odds(decimal_odds):
     """Convert decimal odds to American format."""
-    if decimal_odds >= 2:
-        return f"+{int((decimal_odds - 1) * 100)}"
-    else:
-        return f"{int(-100 / (decimal_odds - 1))}"
+    try:
+        if not decimal_odds or decimal_odds <= 0 or decimal_odds == 1:
+            return "N/A"
+        
+        if decimal_odds >= 2:
+            american = int((decimal_odds - 1) * 100)
+            return f"+{american}"
+        else:
+            american = int(-100 / (decimal_odds - 1))
+            return str(american)
+    except:
+        return "N/A"
 
 @st.cache_data(ttl=3600)
 def get_available_sports(api_key):
@@ -450,74 +582,63 @@ def display_professional_game_card(teams: List[str], best_odds: Dict, all_bookma
     """Display game as professional card."""
     away, home = (teams[0], teams[1]) if len(teams) >= 2 else ("Team A", "Team B")
     
-    # Build sportsbooks HTML
-    sportsbooks_html = ""
+    away_odds_display = american_odds(best_odds.get(away, 0))
+    home_odds_display = american_odds(best_odds.get(home, 0))
+    
+    # Build sportsbooks grid HTML separately
+    books_cards = []
     for i, (book_name, odds) in enumerate(all_bookmaker_odds.items()):
         if i < 4:
-            sportsbooks_html += f"""
-                <div class="bookmaker-card">
-                    <div class="bookmaker-name">{book_name}</div>
-                    <div class="bookmaker-odds">{american_odds(odds)}</div>
-                </div>"""
+            odds_display = american_odds(odds)
+            books_cards.append(f'<div class="bookmaker-card"><div class="bookmaker-name">{book_name}</div><div class="bookmaker-odds">{odds_display}</div></div>')
+    
+    sportsbooks_html = "".join(books_cards)
     
     # Get summary
     summary = generate_bet_summary(teams, arb_value, profit, profit_pct, all_bookmaker_odds)
     
-    # Build complete card HTML in one go
-    card_html = f"""
-    <div class="game-card">
-        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;">
-            <!-- Away Team -->
-            <div class="team-section">
-                <img src="{TEAM_LOGOS.get(away, 'https://via.placeholder.com/120')}" class="team-image" onerror="this.style.display='none';">
-                <div class="team-name">{away}</div>
-                <div class="odds-display">
-                    <div class="odds-label">Best Odds</div>
-                    <div class="odds-value">{american_odds(best_odds.get(away, 0))}</div>
-                </div>
-            </div>
-            
-            <!-- Match Info & Arbitrage -->
-            <div style="text-align: center; padding: 20px; border-right: 1px solid #e5e7eb; border-left: 1px solid #e5e7eb;">
-                <div style="color: #999; font-size: 0.85em; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600;">vs</div>
-                <div style="background: #f3f4f6; border-radius: 8px; padding: 12px; margin-bottom: 15px; border: 1px solid #e5e7eb;">
-                    <div style="color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600;">ARB VALUE</div>
-                    <div style="color: #6366f1; font-size: 1.6em; font-weight: 700;">{arb_value:.4f}</div>
-                </div>
-                <div style="color: #10b981; font-size: 1.1em; font-weight: 700;">💰 +${profit:.2f}</div>
-                <div style="color: #6366f1; font-size: 0.9em; font-weight: 600;">{profit_pct:.1f}% ROI</div>
-            </div>
-            
-            <!-- Home Team -->
-            <div class="team-section">
-                <img src="{TEAM_LOGOS.get(home, 'https://via.placeholder.com/120')}" class="team-image" onerror="this.style.display='none';">
-                <div class="team-name">{home}</div>
-                <div class="odds-display">
-                    <div class="odds-label">Best Odds</div>
-                    <div class="odds-value">{american_odds(best_odds.get(home, 0))}</div>
-                </div>
+    # Build card HTML
+    html_content = f'''<div class="game-card">
+    <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center;">
+        <div class="team-section">
+            <img src="{TEAM_LOGOS.get(away, '')}" class="team-image" onerror="this.style.display='none'">
+            <div class="team-name">{away}</div>
+            <div class="odds-display">
+                <div class="odds-label">Best Odds</div>
+                <div class="odds-value">{away_odds_display}</div>
             </div>
         </div>
-        
-        <!-- Sportsbooks Row -->
-        <div class="divider"></div>
-        <div style="margin-top: 20px;">
-            <div style="color: #666; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 15px; font-weight: 600;">📊 Best Odds by Sportsbook</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
-                {sportsbooks_html}
+        <div style="text-align: center; padding: 20px; border-right: 1px solid #e5e7eb; border-left: 1px solid #e5e7eb;">
+            <div style="color: #999; font-size: 0.85em; margin-bottom: 15px; text-transform: uppercase; font-weight: 600;">vs</div>
+            <div style="background: #f3f4f6; border-radius: 8px; padding: 12px; margin-bottom: 15px;">
+                <div style="color: #666; font-size: 0.75em; text-transform: uppercase; font-weight: 600;">ARB VALUE</div>
+                <div style="color: #6366f1; font-size: 1.6em; font-weight: 700;">{arb_value:.4f}</div>
             </div>
+            <div style="color: #10b981; font-size: 1.1em; font-weight: 700;">💰 +${profit:.2f}</div>
+            <div style="color: #6366f1; font-size: 0.9em; font-weight: 600;">{profit_pct:.1f}% ROI</div>
         </div>
-        
-        <!-- AI Summary -->
-        <div style="background: #f0f4ff; border-left: 4px solid #6366f1; border-radius: 8px; padding: 14px; margin-top: 16px;">
-            <div style="color: #333; font-size: 0.95em; line-height: 1.6;">
-                {summary}
+        <div class="team-section">
+            <img src="{TEAM_LOGOS.get(home, '')}" class="team-image" onerror="this.style.display='none'">
+            <div class="team-name">{home}</div>
+            <div class="odds-display">
+                <div class="odds-label">Best Odds</div>
+                <div class="odds-value">{home_odds_display}</div>
             </div>
         </div>
     </div>
-    """
+    <div class="divider"></div>
+    <div style="margin-top: 20px;">
+        <div style="color: #666; font-size: 0.8em; text-transform: uppercase; margin-bottom: 15px; font-weight: 600;">📊 Best Odds by Sportsbook</div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+            {sportsbooks_html}
+        </div>
+    </div>
+    <div style="background: #f0f4ff; border-left: 4px solid #6366f1; border-radius: 8px; padding: 14px; margin-top: 16px; margin-bottom: 0;">
+        <div style="color: #333; font-size: 0.95em; line-height: 1.6;">{summary}</div>
+    </div>
+</div>'''
     
-    st.markdown(card_html, unsafe_allow_html=True)
+    st.markdown(html_content, unsafe_allow_html=True)
 
 # ============================================================================
 # AI BET SUMMARY GENERATOR
@@ -865,3 +986,4 @@ if not st.session_state.logged_in:
     page_auth()
 else:
     page_dashboard()
+
