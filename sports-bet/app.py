@@ -11,7 +11,7 @@ import pandas as pd
 API_ENV_VAR = "ODDS_API_KEY"
 
 
-def get_odds(api_key: str, sport: str, region: str, markets: str) -> List[Dict[str, Any]]:
+def get_odds(api_key: str, sport: str, region: str = "us", markets: str = "h2h") -> List[Dict[str, Any]]:
     url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds"
 
     params = {
