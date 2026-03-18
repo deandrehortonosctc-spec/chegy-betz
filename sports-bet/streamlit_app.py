@@ -511,9 +511,14 @@ def page_dashboard():
             if st.button("❌ NONE", use_container_width=True, key="desel_all"):
                 st.session_state.selected_markets = []
         
+        # Ensure default is valid
+        market_options = ["Spread", "Moneyline", "Total"]
+        default_val = st.session_state.get("selected_markets", ["Spread"])
+        valid_default = [m for m in default_val if m in market_options] if default_val else ["Spread"]
+        
         markets = st.multiselect("",
-            ["Spread", "Moneyline", "Total"],
-            default=st.session_state.get("selected_markets", ["Spread"]),
+            market_options,
+            default=valid_default,
             key="markets_select"
         )
         st.session_state.selected_markets = markets
@@ -581,4 +586,3 @@ if not st.session_state.logged_in:
     page_auth()
 else:
     page_dashboard()
-
