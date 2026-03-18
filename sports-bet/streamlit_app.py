@@ -1,4 +1,4 @@
-import os
+mport os
 import json
 import hashlib
 from datetime import datetime
@@ -506,7 +506,7 @@ def page_dashboard():
         col_sel, col_desel = st.columns(2)
         with col_sel:
             if st.button("✅ ALL", use_container_width=True, key="sel_all"):
-                st.session_state.selected_markets = ["spread", "moneyline", "total"]
+                st.session_state.selected_markets = ["Spread", "Moneyline", "Total"]
         with col_desel:
             if st.button("❌ NONE", use_container_width=True, key="desel_all"):
                 st.session_state.selected_markets = []
@@ -581,3 +581,4 @@ if not st.session_state.logged_in:
     page_auth()
 else:
     page_dashboard()
+
